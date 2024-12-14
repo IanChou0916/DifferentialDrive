@@ -1,5 +1,7 @@
 package frc.robot;
 
+import static edu.wpi.first.units.Units.Inches;
+
 import edu.wpi.first.math.controller.SimpleMotorFeedforward;
 import frc.lib.util.CanDeviceId;
 import frc.lib.util.Conversions;

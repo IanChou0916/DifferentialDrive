@@ -4,12 +4,10 @@ import com.kauailabs.navx.frc.AHRS;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkBase.ControlType;
 
-
 import edu.wpi.first.math.kinematics.ChassisSpeeds;
 import edu.wpi.first.math.kinematics.DifferentialDriveKinematics;
 import edu.wpi.first.math.kinematics.DifferentialDriveOdometry;
 import edu.wpi.first.math.kinematics.DifferentialDriveWheelSpeeds;
-
 import edu.wpi.first.units.Distance;
 import edu.wpi.first.units.Measure;
 import edu.wpi.first.units.MutableMeasure;
@@ -29,7 +27,7 @@ import frc.lib.gyro.Navx;
 import static frc.robot.Constants.CHASSIS_TRACKWIDTH_METERS;
 import static frc.robot.Constants.CHASSIS_WHEEL_CIRCUMFERENCE;
 import static frc.robot.Constants.DRIVE_CONTINUOUS_CURRENT_LIMIT;
-import static frc.robot.Constants.DRIVE_FF;
+
 import static frc.robot.Constants.DRIVE_GEAR_RATIO;
 import static frc.robot.Constants.LEFT_DRIVE_MOTOR_ID;
 import static frc.robot.Constants.RIGHT_DRIVE_MOTOR_ID;
@@ -38,6 +36,7 @@ import static edu.wpi.first.units.Units.Meters;
 import static edu.wpi.first.units.Units.MetersPerSecond;
 import static edu.wpi.first.units.Units.Seconds;
 import static edu.wpi.first.units.Units.Volts;
+import static frc.robot.Constants.DRIVE_FF;
 
 import java.util.function.Supplier;
 
@@ -51,6 +50,9 @@ public class DriveTrain extends SubsystemBase {
     private final Field2d m_fieldSim = new Field2d();
 
     //private final LinearSystem<N2, N2, N2> m_drivetrainSystem;
+    
+    //public final SimpleMotorFeedforward DRIVE_FF = new SimpleMotorFeedforward(DRIVE_FEEDFORWARD[0], DRIVE_FEEDFORWARD[1], DRIVE_FEEDFORWARD[2]);
+    
     private final MutableMeasure<Voltage> m_appliedVoltage = mutable(Volts.of(0));
     private final MutableMeasure<Distance> m_distance = mutable(Meters.of(0));
   // Mutable holder for unit-safe linear velocity values, persisted to avoid reallocation.
@@ -116,7 +118,7 @@ public class DriveTrain extends SubsystemBase {
 
     }
     
-    private void configDriveMotor(CANSparkMax motor,boolean Inverted){
+    private void configDriveMotor(CANSparkMax motor,boolean Inverted) { 
 
         motor.restoreFactoryDefaults();
 
