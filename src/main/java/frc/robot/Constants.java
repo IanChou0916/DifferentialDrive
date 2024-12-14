@@ -13,21 +13,21 @@ public class Constants {
 
     public static final double DRIVE_DEADBAND = 0.05;
 
-    public static final double[] DRIVE_PID = {0.1, 0.0, 0.0};
-    public static final double[] DRIVE_FEEDFORWARD = {0.0, 0.0, 0.0};
+    public static final double[] DRIVE_PID = {0.00033444, 0.0, 0.0};
+    public static final double[] DRIVE_FEEDFORWARD = {0.17904, 2.9502, 0.30977};
     public static final SimpleMotorFeedforward DRIVE_FF = new SimpleMotorFeedforward(DRIVE_FEEDFORWARD[0], DRIVE_FEEDFORWARD[1], DRIVE_FEEDFORWARD[2]);
+    
 
 
     public static final double MAX_VOLTAGE = 12.0;
 
     public static final double MAX_VELOCITY = 4.5;
-    public static final double MAX_ACCELERATION = 3.0;
+    public static final double MAX_ACCELERATION = 4.5;
 
-    public static final double CHASSIS_TRACKWIDTH_METERS = 0.62685;
-    public static final double CHASSIS_WHEELBASE_METERS = 0.59825;
-    public static final double SWERVE_WHEEL_CIRCUMFERENCE = Conversions.inchesToMeters(6.0)*Math.PI;
+    public static final double CHASSIS_TRACKWIDTH_METERS =Conversions.inchesToMeters(24.0);
+    public static final double CHASSIS_WHEEL_CIRCUMFERENCE = Conversions.inchesToMeters(6.0)*Math.PI;
 
-    public static final double DRIVE_GEAR_RATIO =  8.46;
+    public static final double DRIVE_GEAR_RATIO = 1.0/11.46;
 
     public static final int DRIVE_CONTINUOUS_CURRENT_LIMIT = 40;
     public static final double DRIVE_PEAK_CURRENT_LIMIT = 60;
